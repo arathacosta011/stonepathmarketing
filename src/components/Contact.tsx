@@ -20,7 +20,7 @@ const Contact = () => {
                 <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
                   <Mail size={18} className="text-primary" />
                 </div>
-                <span className="text-foreground">Arathacosta011@gmail.com</span>
+                <span className="text-foreground">Stonepathexplore@gmail.com</span>
               </div>
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
