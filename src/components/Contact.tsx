@@ -24,6 +24,12 @@ const Contact = () => {
               </div>
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
+                  <Instagram size={18} className="text-primary" />
+                </div>
+                <a href="https://instagram.com/stonepathmarketing" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">@stonepathmarketing</a>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
                   <Phone size={18} className="text-primary" />
                 </div>
                 <span className="text-foreground">(619) 933-1871</span>
@@ -33,12 +39,6 @@ const Contact = () => {
                   <MapPin size={18} className="text-primary" />
                 </div>
                 <span className="text-foreground">San Diego, CA</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
-                  <Instagram size={18} className="text-primary" />
-                </div>
-                <a href="https://instagram.com/stonepathmarketing" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">@stonepathmarketing</a>
               </div>
             </div>
           </div>
