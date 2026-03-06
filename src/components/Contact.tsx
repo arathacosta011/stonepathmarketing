@@ -19,8 +19,11 @@ const Contact = () => {
     }
     setLoading(true);
     try {
-      const { data, error } = await supabase.functions.invoke("send-contact-email", {
-        body: form,
+      const { error } = await supabase.from("contact_submissions").insert({
+        name: form.name,
+        email: form.email,
+        company: form.company || null,
+        message: form.message,
       });
       if (error) throw error;
       toast.success("Message sent! We'll be in touch soon.");
