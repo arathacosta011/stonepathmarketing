@@ -1,10 +1,11 @@
-import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Instagram, Mail, MapPin, Phone, CheckCircle, X } from "lucide-react";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -26,7 +27,8 @@ const Contact = () => {
         message: form.message,
       });
       if (error) throw error;
-      toast.success("Message sent! We'll be in touch soon.");
+      toast.success("Message sent!");
+      setShowSuccess(true);
       setForm({ name: "", email: "", company: "", message: "" });
     } catch (err: any) {
       toast.error("Failed to send message. Please try again.");
@@ -121,6 +123,38 @@ const Contact = () => {
           </form>
         </div>
       </div>
+
+      {/* Success Popup */}
+      {showSuccess && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <div className="relative bg-card border border-border rounded-xl p-8 md:p-10 max-w-md w-full mx-4 text-center shadow-2xl animate-in fade-in zoom-in-95 duration-300">
+            <button
+              onClick={() => setShowSuccess(false)}
+              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <X size={20} />
+            </button>
+            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <CheckCircle size={32} className="text-primary" />
+            </div>
+            <h3 className="font-display text-2xl font-bold text-foreground mb-3">
+              Thank You! 🎉
+            </h3>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-2">
+              We've received your message and will respond within <span className="text-primary font-semibold">24 hours</span>.
+            </p>
+            <p className="text-foreground font-semibold text-lg mt-4">
+              Get ready to scale. 🚀
+            </p>
+            <button
+              onClick={() => setShowSuccess(false)}
+              className="mt-8 px-8 py-3 rounded-md bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity glow"
+            >
+              Got It
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
