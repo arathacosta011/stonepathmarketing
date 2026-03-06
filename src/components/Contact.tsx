@@ -27,6 +27,10 @@ const Contact = () => {
         message: form.message,
       });
       if (error) throw error;
+      // Send notifications (email + Slack) — fire and forget
+      supabase.functions.invoke("send-contact-email", {
+        body: { name: form.name, email: form.email, company: form.company, message: form.message },
+      }).catch(console.error);
       toast.success("Message sent!");
       setShowSuccess(true);
       setForm({ name: "", email: "", company: "", message: "" });
