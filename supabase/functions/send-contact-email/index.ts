@@ -33,8 +33,8 @@ Deno.serve(async (req) => {
             Authorization: `Bearer ${RESEND_API_KEY}`,
           },
           body: JSON.stringify({
-            from: 'StonePath Contact <onboarding@resend.dev>',
-            to: ['Stonepathexplore@gmail.com'],
+            from: 'onboarding@resend.dev',
+            to: ['stonepathexplore@gmail.com'],
             subject: `🔥 New Lead: ${name}`,
             html: `
               <h2>New Contact Form Submission</h2>
@@ -44,12 +44,15 @@ Deno.serve(async (req) => {
               <hr />
               <p><strong>Message:</strong></p>
               <p>${message}</p>
+              <br/>
+              <p><em>Reply directly to this lead at ${email}</em></p>
             `,
-            reply_to: email,
           }),
         });
+        const resBody = await res.text();
+        console.log('Resend response:', res.status, resBody);
         if (res.ok) results.email = true;
-        else console.error('Resend error:', await res.text());
+        else console.error('Resend error:', res.status, resBody);
       } catch (e) {
         console.error('Email send failed:', e);
       }
@@ -72,6 +75,16 @@ Deno.serve(async (req) => {
         const channelId = general?.id || channelsData.channels?.[0]?.id;
 
         if (channelId) {
+          // Join channel first
+          await fetch(`${SLACK_GATEWAY_URL}/conversations.join`, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${LOVABLE_API_KEY}`,
+              'X-Connection-Api-Key': SLACK_API_KEY,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ channel: channelId }),
+          });
           const slackRes = await fetch(`${SLACK_GATEWAY_URL}/chat.postMessage`, {
             method: 'POST',
             headers: {
