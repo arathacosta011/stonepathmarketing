@@ -5,10 +5,10 @@ import afterImg from "@/assets/after-website.jpg";
 
 const showcases = [
   {
-    client: "Local Restaurant",
+    client: "E-Commerce & Retail",
     before: beforeImg,
     after: afterImg,
-    description: "Transformed an outdated, cluttered site into a sleek, modern platform that increased online reservations by 3x.",
+    description: "Clothing brands, boutiques, and online stores that need a clean storefront to drive sales and build trust with customers.",
   },
 ];
 
