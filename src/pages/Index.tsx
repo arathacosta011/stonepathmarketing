@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import WebDesign from "@/components/WebDesign";
+import BeforeAfter from "@/components/BeforeAfter";
 import Stats from "@/components/Stats";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -13,6 +14,7 @@ const Index = () => {
       <Hero />
       <Services />
       <WebDesign />
+      <BeforeAfter />
       <Stats />
       <Contact />
       <Footer />
