@@ -12,14 +12,14 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/20" />
       <div className="relative z-10 container mx-auto px-6 text-center max-w-4xl">
         <p className="text-primary font-body text-sm font-semibold tracking-[0.3em] uppercase mb-6 opacity-0 animate-fade-up">
-          Digital Growth Agency
+          Performance Marketing &amp; Web Design
         </p>
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-8 opacity-0 animate-fade-up [animation-delay:200ms]">
-          Ads That Convert.{" "}
-          <span className="text-gradient">Websites That Impress.</span>
+          We Build What{" "}
+          <span className="text-gradient">Your Business Needs.</span>
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-up [animation-delay:400ms]">
-          We run high-ROI ad campaigns and build stunning websites — or upgrade the one you already have. Strategy, design, and growth under one roof.
+          Paid advertising and web design built around one thing — your bottom line.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-up [animation-delay:600ms]">
           <a
