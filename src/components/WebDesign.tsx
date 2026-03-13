@@ -1,10 +1,10 @@
 import { Monitor, Palette, Zap, ShieldCheck } from "lucide-react";
 
 const features = [
-  { icon: Monitor, title: "Custom Design", desc: "Pixel-perfect, fully responsive websites tailored to your brand identity." },
-  { icon: Palette, title: "Modern Aesthetics", desc: "Clean, conversion-focused layouts that keep visitors engaged and impressed." },
-  { icon: Zap, title: "Lightning Fast", desc: "Optimized for speed and performance — because every second counts." },
-  { icon: ShieldCheck, title: "Secure & Reliable", desc: "Built with best practices for security, uptime, and peace of mind." },
+  { icon: Monitor, title: "Custom-Built, Not Templated", desc: "Unlike agencies that slap your logo on a template, we design every page from scratch — tailored to your brand, your audience, and your goals." },
+  { icon: Palette, title: "Redesign & Refresh", desc: "Already have a website? We'll modernize your existing site with updated visuals, faster load times, and mobile-first responsiveness — no starting over required." },
+  { icon: Zap, title: "Speed That Converts", desc: "Most agency sites load in 5+ seconds. Ours load under 2. Faster sites rank higher on Google and keep visitors from bouncing to competitors." },
+  { icon: ShieldCheck, title: "Ongoing Updates & Support", desc: "We don't disappear after launch. From content updates to security patches, we keep your site current, secure, and performing at its best." },
 ];
 
 const WebDesign = () => {
@@ -17,12 +17,17 @@ const WebDesign = () => {
               Web Design
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              We Build <span className="text-gradient">Professional Websites</span>
+              Why Our Web Design <span className="text-gradient">Outperforms the Rest</span>
             </h2>
+            <p className="text-muted-foreground text-lg mb-4 leading-relaxed">
+              Most agencies hand you a cookie-cutter site and call it done. We build 
+              high-performance websites engineered to convert — and we stick around to 
+              keep them running flawlessly.
+            </p>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              Your website is your digital storefront. We design and develop stunning, 
-              high-performing websites that turn visitors into customers — whether you need 
-              a sleek landing page or a full-scale business platform.
+              Whether you need a brand-new site or want to <strong className="text-foreground">upgrade your existing website</strong>, 
+              we handle everything: redesigns, speed optimization, content refreshes, 
+              and ongoing maintenance so your online presence never falls behind.
             </p>
             <a
               href="#contact"
