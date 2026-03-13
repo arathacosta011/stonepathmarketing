@@ -5,7 +5,12 @@ import logo from "@/assets/logo.png";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  const links = ["Services", "About", "Results", "Contact"];
+  const links = [
+    { label: "Meta Ads", href: "#services" },
+    { label: "Web Design", href: "#results" },
+    { label: "Process", href: "#about" },
+    { label: "Contact", href: "#contact" },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -16,11 +21,11 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <a
-              key={l}
-              href={`#${l.toLowerCase()}`}
+              key={l.label}
+              href={l.href}
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
-              {l}
+              {l.label}
             </a>
           ))}
           <a
@@ -42,12 +47,12 @@ const Navbar = () => {
         <div className="md:hidden bg-background border-b border-border px-6 pb-6 space-y-4">
           {links.map((l) => (
             <a
-              key={l}
-              href={`#${l.toLowerCase()}`}
+              key={l.label}
+              href={l.href}
               onClick={() => setOpen(false)}
               className="block text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
-              {l}
+              {l.label}
             </a>
           ))}
           <a

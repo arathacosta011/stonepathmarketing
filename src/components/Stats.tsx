@@ -4,26 +4,26 @@ const steps = [
   {
     icon: Search,
     number: "01",
-    title: "Discover",
-    description: "We dig into your brand, audience, and competitors to uncover untapped opportunities.",
+    title: "Audit & Discovery",
+    description: "We review your current ads and website to identify gaps, missed opportunities, and quick wins.",
   },
   {
     icon: Target,
     number: "02",
-    title: "Strategize",
-    description: "Every move is mapped out — from channel mix to messaging — backed by real data.",
+    title: "Strategy & Setup",
+    description: "Custom ad campaigns and website plans built around your goals, audience, and budget.",
   },
   {
     icon: Rocket,
     number: "03",
-    title: "Execute",
-    description: "We launch campaigns that cut through the noise and demand attention.",
+    title: "Launch & Build",
+    description: "Your Meta ads go live and your new or upgraded website launches — simultaneously for maximum impact.",
   },
   {
     icon: BarChart3,
     number: "04",
-    title: "Optimize",
-    description: "Continuous testing and refinement to squeeze every ounce of performance.",
+    title: "Optimize & Grow",
+    description: "Ongoing ad optimization, website updates, and performance reporting to keep scaling your results.",
   },
 ];
 
@@ -39,7 +39,7 @@ const Stats = () => {
             How We <span className="text-gradient">Get It Done</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A proven four-step framework that turns vision into measurable growth.
+            From your first ad to your next website upgrade — here's how we take you from where you are to where you want to be.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
