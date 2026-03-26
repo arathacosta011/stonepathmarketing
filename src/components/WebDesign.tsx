@@ -17,17 +17,16 @@ const WebDesign = () => {
               Web Design
             </p>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Why Our Web Design{" "}
-              <span className="text-gradient">Outperforms the Rest</span>
+              Premium Websites{" "}
+              <span className="text-gradient">Built to Convert</span>
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg mb-4 leading-relaxed">
-              Most agencies hand you a cookie-cutter site and call it done. We build
-              high-performance websites engineered to convert.
+              The goal is not just a pretty website. We build premium, fast, conversion-focused sites that turn attention into booked calls and qualified leads.
             </p>
             <p className="text-muted-foreground text-base sm:text-lg mb-8 leading-relaxed">
-              Whether you need a brand-new site or want to{" "}
-              <strong className="text-foreground">upgrade your existing website</strong>,
-              we handle everything from redesigns to ongoing maintenance.
+              We use AI to move faster — not to look generic. Every site gets{" "}
+              <strong className="text-foreground">hands-on design, strategic copy, and performance optimization</strong>{" "}
+              so it actually works for your business.
             </p>
             <a
               href="#contact"

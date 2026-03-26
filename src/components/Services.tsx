@@ -18,14 +18,15 @@ const Services = () => {
             Meta Advertising
           </p>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            We Run Ads That <span className="text-gradient">Actually Work</span>
+            Meta Campaigns Built to{" "}
+            <span className="text-gradient">Scale Profitably</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-            Most businesses waste money on Meta ads. We make sure yours print it. Full-service campaign management from strategy to scale.
+            We plan, launch, and optimize Meta campaigns with clear strategy, better creative direction, and a relentless focus on lead quality, cost efficiency, and growth.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-          {services.map((s, i) => (
+          {services.map((s) => (
             <div
               key={s.title}
               className="group p-7 md:p-8 rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_30px_hsl(270_45%_50%/0.08)]"
