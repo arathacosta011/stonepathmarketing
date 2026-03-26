@@ -3,15 +3,6 @@ import { ArrowRight } from "lucide-react";
 import beforeImg from "@/assets/before-website.jpg";
 import afterImg from "@/assets/after-website.jpg";
 
-const showcases = [
-  {
-    client: "E-Commerce & Retail",
-    before: beforeImg,
-    after: afterImg,
-    description: "Clothing brands, boutiques, and online stores that need a clean storefront to drive sales and build trust with customers.",
-  },
-];
-
 const BeforeAfter = () => {
   const [sliderPos, setSliderPos] = useState(50);
 
@@ -25,73 +16,60 @@ const BeforeAfter = () => {
   return (
     <section id="showcase" className="py-24 md:py-32">
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
           <p className="text-primary text-sm font-semibold tracking-[0.3em] uppercase mb-4">
             Transformations
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            Before &amp; <span className="text-gradient">After</span>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+            Before & <span className="text-gradient">After</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
             Drag the slider to see how we turn outdated websites into modern, high-converting machines.
           </p>
         </div>
 
-        {showcases.map((item) => (
-          <div key={item.client} className="max-w-4xl mx-auto">
-            {/* Slider container */}
-            <div
-              className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border cursor-col-resize select-none"
-              onMouseMove={(e) => handleSlider(e, e.currentTarget)}
-              onTouchMove={(e) => handleSlider(e, e.currentTarget)}
-            >
-              {/* After image (full background) */}
+        <div className="max-w-4xl mx-auto">
+          <div
+            className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-2xl overflow-hidden border border-border cursor-col-resize select-none"
+            onMouseMove={(e) => handleSlider(e, e.currentTarget)}
+            onTouchMove={(e) => handleSlider(e, e.currentTarget)}
+          >
+            <img src={afterImg} alt="After redesign" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 overflow-hidden" style={{ width: `${sliderPos}%` }}>
               <img
-                src={item.after}
-                alt="After redesign"
+                src={beforeImg}
+                alt="Before redesign"
                 className="absolute inset-0 w-full h-full object-cover"
+                style={{ width: `${100 / (sliderPos / 100)}%`, maxWidth: "none" }}
               />
+            </div>
 
-              {/* Before image (clipped) */}
-              <div
-                className="absolute inset-0 overflow-hidden"
-                style={{ width: `${sliderPos}%` }}
-              >
-                <img
-                  src={item.before}
-                  alt="Before redesign"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  style={{ width: `${100 / (sliderPos / 100)}%`, maxWidth: "none" }}
-                />
-              </div>
-
-              {/* Slider line */}
-              <div
-                className="absolute top-0 bottom-0 w-1 bg-primary shadow-[0_0_12px_hsl(270_45%_50%/0.6)] z-10"
-                style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }}
-              >
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-lg">
-                  <ArrowRight size={16} className="text-primary-foreground -rotate-180" />
-                  <ArrowRight size={16} className="text-primary-foreground" />
-                </div>
-              </div>
-
-              {/* Labels */}
-              <div className="absolute top-4 left-4 px-3 py-1 rounded-md bg-destructive/90 text-primary-foreground text-xs font-bold uppercase tracking-wider z-20">
-                Before
-              </div>
-              <div className="absolute top-4 right-4 px-3 py-1 rounded-md bg-primary/90 text-primary-foreground text-xs font-bold uppercase tracking-wider z-20">
-                After
+            {/* Slider line */}
+            <div
+              className="absolute top-0 bottom-0 w-0.5 bg-primary/80 z-10"
+              style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }}
+            >
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-lg glow">
+                <ArrowRight size={14} className="text-primary-foreground -rotate-180" />
+                <ArrowRight size={14} className="text-primary-foreground" />
               </div>
             </div>
 
-            {/* Description */}
-            <div className="mt-8 text-center">
-              <h3 className="font-display text-2xl font-bold mb-2">{item.client}</h3>
-              <p className="text-muted-foreground text-lg max-w-xl mx-auto">{item.description}</p>
+            <div className="absolute top-3 sm:top-4 left-3 sm:left-4 px-3 py-1 rounded-lg bg-destructive/90 text-primary-foreground text-[10px] sm:text-xs font-bold uppercase tracking-wider z-20">
+              Before
+            </div>
+            <div className="absolute top-3 sm:top-4 right-3 sm:right-4 px-3 py-1 rounded-lg bg-primary/90 text-primary-foreground text-[10px] sm:text-xs font-bold uppercase tracking-wider z-20">
+              After
             </div>
           </div>
-        ))}
+
+          <div className="mt-8 text-center">
+            <h3 className="font-display text-xl sm:text-2xl font-bold mb-2">E-Commerce & Retail</h3>
+            <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+              Clothing brands, boutiques, and online stores that need a clean storefront to drive sales and build trust.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
