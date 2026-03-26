@@ -1,4 +1,4 @@
-import { Instagram, Mail, MapPin, Phone, CheckCircle, X } from "lucide-react";
+import { Instagram, Mail, MapPin, Phone, CheckCircle, X, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -27,7 +27,6 @@ const Contact = () => {
         message: form.message,
       });
       if (error) throw error;
-      // Send notifications (email + Slack) — fire and forget
       supabase.functions.invoke("send-contact-email", {
         body: { name: form.name, email: form.email, company: form.company, message: form.message },
       }).catch(console.error);
@@ -42,63 +41,81 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32">
+    <section id="contact" className="py-24 md:py-32 bg-card/30">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16">
-          <div>
-            <p className="text-primary text-sm font-semibold tracking-[0.3em] uppercase mb-4">
-              Get In Touch
-            </p>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Ready to Lay the First <span className="text-gradient">Stone?</span>
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-10">
-              Tell us about your goals and we'll craft a strategy to get you there. No pressure, just possibilities.
-            </p>
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
-                  <Mail size={18} className="text-primary" />
-                </div>
-                <span className="text-foreground">Stonepathexplore@gmail.com</span>
+        <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
+          <p className="text-primary text-sm font-semibold tracking-[0.3em] uppercase mb-4">
+            Get In Touch
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+            Ready to Lay the First <span className="text-gradient">Stone?</span>
+          </h2>
+          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+            Tell us about your goals and we'll craft a strategy to get you there. No pressure, just possibilities.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 max-w-5xl mx-auto">
+          {/* Contact info */}
+          <div className="lg:col-span-2 space-y-6">
+            <div className="flex items-center gap-4">
+              <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Mail size={18} className="text-primary" />
               </div>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
-                  <Instagram size={18} className="text-primary" />
-                </div>
-                <a href="https://www.instagram.com/stonepathmarketing/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">@stonepathmarketing</a>
+              <div>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider mb-0.5">Email</p>
+                <span className="text-foreground text-sm">Stonepathexplore@gmail.com</span>
               </div>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
-                  <Phone size={18} className="text-primary" />
-                </div>
-                <span className="text-foreground">(619) 933-1871</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Instagram size={18} className="text-primary" />
               </div>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
-                  <MapPin size={18} className="text-primary" />
-                </div>
-                <span className="text-foreground">San Diego, CA</span>
+              <div>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider mb-0.5">Instagram</p>
+                <a href="https://www.instagram.com/stonepathmarketing/" target="_blank" rel="noopener noreferrer" className="text-foreground text-sm hover:text-primary transition-colors">@stonepathmarketing</a>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Phone size={18} className="text-primary" />
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider mb-0.5">Phone</p>
+                <span className="text-foreground text-sm">(619) 933-1871</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <MapPin size={18} className="text-primary" />
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider mb-0.5">Location</p>
+                <span className="text-foreground text-sm">San Diego, CA</span>
               </div>
             </div>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="grid sm:grid-cols-2 gap-5">
+
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="lg:col-span-3 space-y-4">
+            <div className="grid sm:grid-cols-2 gap-4">
               <input
                 type="text"
                 name="name"
                 value={form.name}
                 onChange={handleChange}
-                placeholder="Name"
-                className="w-full px-4 py-3 rounded-md bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                placeholder="Name *"
+                required
+                className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm"
               />
               <input
                 type="email"
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="Email"
-                className="w-full px-4 py-3 rounded-md bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                placeholder="Email *"
+                required
+                className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm"
               />
             </div>
             <input
@@ -106,23 +123,25 @@ const Contact = () => {
               name="company"
               value={form.company}
               onChange={handleChange}
-              placeholder="Company"
-              className="w-full px-4 py-3 rounded-md bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+              placeholder="Company (optional)"
+              className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm"
             />
             <textarea
-              rows={5}
+              rows={4}
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="Tell us about your project..."
-              className="w-full px-4 py-3 rounded-md bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
+              placeholder="Tell us about your project... *"
+              required
+              className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all resize-none text-sm"
             />
             <button
               type="submit"
               disabled={loading}
-              className="w-full px-6 py-4 rounded-md bg-primary text-primary-foreground font-semibold text-base hover:opacity-90 transition-opacity glow disabled:opacity-50"
+              className="group w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-lg bg-gradient-metallic text-primary-foreground font-semibold text-base hover:opacity-90 transition-all glow disabled:opacity-50"
             >
               {loading ? "Sending..." : "Send Message"}
+              {!loading && <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />}
             </button>
           </form>
         </div>
@@ -130,29 +149,30 @@ const Contact = () => {
 
       {/* Success Popup */}
       {showSuccess && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-          <div className="relative bg-card border border-border rounded-xl p-8 md:p-10 max-w-md w-full mx-4 text-center shadow-2xl animate-in fade-in zoom-in-95 duration-300">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm p-4">
+          <div className="relative bg-card border border-border rounded-2xl p-8 md:p-10 max-w-md w-full text-center shadow-2xl animate-in fade-in zoom-in-95 duration-300">
             <button
               onClick={() => setShowSuccess(false)}
               className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
             >
               <X size={20} />
             </button>
-            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
               <CheckCircle size={32} className="text-primary" />
             </div>
             <h3 className="font-display text-2xl font-bold text-foreground mb-3">
               Thank You! 🎉
             </h3>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-2">
-              We've received your message and will respond within <span className="text-primary font-semibold">24 hours</span>.
+            <p className="text-muted-foreground text-base leading-relaxed mb-2">
+              We've received your message and will respond within{" "}
+              <span className="text-primary font-semibold">24 hours</span>.
             </p>
             <p className="text-foreground font-semibold text-lg mt-4">
               Get ready to scale. 🚀
             </p>
             <button
               onClick={() => setShowSuccess(false)}
-              className="mt-8 px-8 py-3 rounded-md bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity glow"
+              className="mt-8 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity glow"
             >
               Got It
             </button>
