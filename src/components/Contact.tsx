@@ -48,15 +48,15 @@ const Contact = () => {
             Get In Touch
           </p>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            Ready to Lay the First <span className="text-gradient">Stone?</span>
+            Ready to Build Your Next{" "}
+            <span className="text-gradient">Growth System?</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-            Tell us about your goals and we'll craft a strategy to get you there. No pressure, just possibilities.
+            Tell us what you are selling, where you are stuck, and what growth looks like for your business. We will map out the smartest next step.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 max-w-5xl mx-auto">
-          {/* Contact info */}
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center gap-4">
               <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -96,84 +96,39 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Form */}
           <form onSubmit={handleSubmit} className="lg:col-span-3 space-y-4">
             <div className="grid sm:grid-cols-2 gap-4">
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="Name *"
-                required
-                className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm"
-              />
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="Email *"
-                required
-                className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm"
-              />
+              <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Name *" required className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm" />
+              <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Email *" required className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm" />
             </div>
-            <input
-              type="text"
-              name="company"
-              value={form.company}
-              onChange={handleChange}
-              placeholder="Company (optional)"
-              className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm"
-            />
-            <textarea
-              rows={4}
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              placeholder="Tell us about your project... *"
-              required
-              className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all resize-none text-sm"
-            />
-            <button
-              type="submit"
-              disabled={loading}
-              className="group w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-lg bg-gradient-metallic text-primary-foreground font-semibold text-base hover:opacity-90 transition-all glow disabled:opacity-50"
-            >
-              {loading ? "Sending..." : "Send Message"}
+            <input type="text" name="company" value={form.company} onChange={handleChange} placeholder="Company (optional)" className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm" />
+            <textarea rows={4} name="message" value={form.message} onChange={handleChange} placeholder="Tell us what you are selling, where you are stuck, and what growth looks like... *" required className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all resize-none text-sm" />
+            <button type="submit" disabled={loading} className="group w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-lg bg-gradient-metallic text-primary-foreground font-semibold text-base hover:opacity-90 transition-all glow disabled:opacity-50">
+              {loading ? "Sending..." : "Request Your Growth Plan"}
               {!loading && <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />}
             </button>
+            <p className="text-muted-foreground text-xs text-center leading-relaxed pt-1">
+              No pressure. Just a clear look at what is working, what is not, and what we would do next.
+            </p>
           </form>
         </div>
       </div>
 
-      {/* Success Popup */}
       {showSuccess && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm p-4">
           <div className="relative bg-card border border-border rounded-2xl p-8 md:p-10 max-w-md w-full text-center shadow-2xl animate-in fade-in zoom-in-95 duration-300">
-            <button
-              onClick={() => setShowSuccess(false)}
-              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
-            >
+            <button onClick={() => setShowSuccess(false)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors">
               <X size={20} />
             </button>
             <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
               <CheckCircle size={32} className="text-primary" />
             </div>
-            <h3 className="font-display text-2xl font-bold text-foreground mb-3">
-              Thank You! 🎉
-            </h3>
+            <h3 className="font-display text-2xl font-bold text-foreground mb-3">Message Received</h3>
             <p className="text-muted-foreground text-base leading-relaxed mb-2">
-              We've received your message and will respond within{" "}
-              <span className="text-primary font-semibold">24 hours</span>.
+              We will review your details and get back to you within{" "}
+              <span className="text-primary font-semibold">24 hours</span> with a clear next step.
             </p>
-            <p className="text-foreground font-semibold text-lg mt-4">
-              Get ready to scale. 🚀
-            </p>
-            <button
-              onClick={() => setShowSuccess(false)}
-              className="mt-8 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity glow"
-            >
+            <button onClick={() => setShowSuccess(false)} className="mt-8 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity glow">
               Got It
             </button>
           </div>

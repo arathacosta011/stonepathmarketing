@@ -21,10 +21,11 @@ const BeforeAfter = () => {
             Transformations
           </p>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            Before & <span className="text-gradient">After</span>
+            From Outdated to{" "}
+            <span className="text-gradient">Conversion-Ready</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-            Drag the slider to see how we turn outdated websites into modern, high-converting machines.
+            See the kind of visual and structural upgrade that helps businesses look more credible and convert more traffic.
           </p>
         </div>
 
@@ -44,7 +45,6 @@ const BeforeAfter = () => {
               />
             </div>
 
-            {/* Slider line */}
             <div
               className="absolute top-0 bottom-0 w-0.5 bg-primary/80 z-10"
               style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }}

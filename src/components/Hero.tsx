@@ -13,21 +13,20 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-transparent h-32" />
       
       <div className="relative z-10 container mx-auto px-6 text-center max-w-4xl py-20">
-        {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-8 opacity-0 animate-fade-up">
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
           <span className="text-primary font-body text-xs font-semibold tracking-widest uppercase">
-            Performance Marketing & Web Design
+            Meta Ads & High-Converting Websites
           </span>
         </div>
 
         <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-6 opacity-0 animate-fade-up [animation-delay:150ms]">
-          We Build What{" "}
-          <span className="text-gradient">Your Business Needs.</span>
+          We Build the Ads and Websites That{" "}
+          <span className="text-gradient">Turn Clicks Into Clients.</span>
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10 opacity-0 animate-fade-up [animation-delay:300ms] leading-relaxed">
-          Paid advertising and web design built around one thing — your bottom line.
+          Stonepath Marketing helps businesses grow with conversion-focused Meta campaigns and premium AI-assisted websites that look sharp and perform.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-up [animation-delay:450ms]">
@@ -35,7 +34,7 @@ const Hero = () => {
             href="#contact"
             className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-lg bg-gradient-metallic text-primary-foreground font-semibold text-base hover:opacity-90 transition-all glow"
           >
-            Get Started Today
+            Request a Growth Plan
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
           <a
@@ -47,7 +46,6 @@ const Hero = () => {
           </a>
         </div>
 
-        {/* Trust signals */}
         <div className="mt-16 pt-8 border-t border-border/30 opacity-0 animate-fade-up [animation-delay:600ms]">
           <p className="text-muted-foreground text-xs tracking-widest uppercase mb-4">Trusted by businesses in</p>
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground/70 font-medium">
