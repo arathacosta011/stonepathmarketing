@@ -1,8 +1,8 @@
 import { useRef, useCallback, useEffect } from "react";
 import GlowOrbs from "@/components/GlowOrbs";
 import { ArrowRight } from "lucide-react";
-import beforeImg from "@/assets/before-website.jpg";
-import afterImg from "@/assets/after-website.jpg";
+import beforeImg from "@/assets/before-website.webp";
+import afterImg from "@/assets/after-website.webp";
 
 const tiers = [
   { label: "Retouch", desc: "Clean up what you have" },
