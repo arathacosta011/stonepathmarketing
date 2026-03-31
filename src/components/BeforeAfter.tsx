@@ -106,7 +106,7 @@ const BeforeAfter = () => {
             <div
               ref={beforeRef}
               className="absolute inset-0"
-              style={{ clipPath: "inset(0 50% 0 0)", willChange: "clip-path" }}
+              style={{ clipPath: "inset(0 50% 0 0)" }}
             >
               <img
                 src={beforeImg}
