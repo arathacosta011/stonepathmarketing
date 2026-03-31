@@ -43,16 +43,13 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 md:py-32 bg-card/30">
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-          <p className="text-primary text-sm font-semibold tracking-[0.3em] uppercase mb-4">
-            Get In Touch
-          </p>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            Ready to Build Your{" "}
-            <span className="text-gradient">Dream Website?</span>
+        <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-5">
+            Let's Talk About{" "}
+            <span className="text-gradient">Your Site</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-            Tell us about your business, what you need, and where you want to go. We will map out the smartest next step.
+            Tell us what you've got, what's not working, and where you want to go. No pressure — just clarity.
           </p>
         </div>
 
@@ -101,14 +98,14 @@ const Contact = () => {
               <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Name *" required className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm" />
               <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Email *" required className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm" />
             </div>
-            <input type="text" name="company" value={form.company} onChange={handleChange} placeholder="Company (optional)" className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm" />
-            <textarea rows={4} name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your business and what kind of website you need... *" required className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all resize-none text-sm" />
+            <input type="text" name="company" value={form.company} onChange={handleChange} placeholder="Website URL (optional)" className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm" />
+            <textarea rows={4} name="message" value={form.message} onChange={handleChange} placeholder="What's not working with your current site? What do you need? *" required className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all resize-none text-sm" />
             <button type="submit" disabled={loading} className="group w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-lg bg-gradient-metallic text-primary-foreground font-semibold text-base hover:opacity-90 transition-all glow disabled:opacity-50">
-              {loading ? "Sending..." : "Start Your Project"}
+              {loading ? "Sending..." : "Book a Strategy Call"}
               {!loading && <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />}
             </button>
             <p className="text-muted-foreground text-xs text-center leading-relaxed pt-1">
-              No pressure. Just a clear look at what you need and how we can help.
+              No pitch. Just an honest look at what's working, what's not, and what we'd do next.
             </p>
           </form>
         </div>
@@ -125,7 +122,7 @@ const Contact = () => {
             </div>
             <h3 className="font-display text-2xl font-bold text-foreground mb-3">Message Received</h3>
             <p className="text-muted-foreground text-base leading-relaxed mb-2">
-              We will review your details and get back to you within{" "}
+              We'll review your details and get back to you within{" "}
               <span className="text-primary font-semibold">24 hours</span> with a clear next step.
             </p>
             <button onClick={() => setShowSuccess(false)} className="mt-8 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity glow">
