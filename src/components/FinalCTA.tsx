@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import GlowOrbs from "@/components/GlowOrbs";
 
 const FinalCTA = () => {
   return (

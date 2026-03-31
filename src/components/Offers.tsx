@@ -1,4 +1,5 @@
 import { Paintbrush, Globe, TrendingUp } from "lucide-react";
+import GlowOrbs from "@/components/GlowOrbs";
 
 const blocks = [
   {
