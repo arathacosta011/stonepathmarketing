@@ -1,23 +1,30 @@
 import { ArrowRight } from "lucide-react";
-import StonePath from "@/components/StonePath";
+import stonePathBg from "@/assets/stone-path-hero.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-16">
-      {/* Fog/gradient base */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(270_45%_50%/0.06)_0%,_transparent_70%)]" />
-      
-      {/* Animated stone paths */}
-      <StonePath />
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
+      {/* Realistic stone path background */}
+      <img
+        src={stonePathBg}
+        alt="Winding cobblestone path in atmospheric fog"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        width={1920}
+        height={1080}
+        fetchPriority="high"
+      />
+
+      {/* Subtle dark overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
+      <div className="absolute inset-0 bg-background/20" />
 
       <div className="relative z-10 container mx-auto px-6 text-center max-w-4xl py-20">
-        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] mb-8 opacity-0 animate-fade-up [animation-delay:200ms]">
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] mb-8 opacity-0 animate-fade-up [animation-delay:200ms] drop-shadow-lg">
           Websites built to make your business{" "}
           <span className="text-gradient">look ready to scale.</span>
         </h1>
 
-        <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto mb-12 opacity-0 animate-fade-up [animation-delay:400ms] leading-relaxed">
+        <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto mb-12 opacity-0 animate-fade-up [animation-delay:400ms] leading-relaxed drop-shadow-md">
           Retouch your current site or rebuild from the ground up — either way, we turn weak first impressions into clean, conversion-ready experiences.
         </p>
 
@@ -31,7 +38,7 @@ const Hero = () => {
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-border/60 text-foreground font-semibold text-base hover:bg-muted/50 hover:border-border transition-all"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-border/60 text-foreground font-semibold text-base hover:bg-muted/50 hover:border-border transition-all backdrop-blur-sm"
           >
             Book a Strategy Call
           </a>
