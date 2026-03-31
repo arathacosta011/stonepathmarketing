@@ -1,4 +1,5 @@
 import { ShieldCheck, Eye, MousePointerClick, Rocket } from "lucide-react";
+import GlowOrbs from "@/components/GlowOrbs";
 
 const points = [
   { icon: ShieldCheck, text: "More trust from the first click" },
