@@ -1,4 +1,4 @@
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useEffect } from "react";
 import GlowOrbs from "@/components/GlowOrbs";
 import { ArrowRight } from "lucide-react";
 import beforeImg from "@/assets/before-website.jpg";
@@ -11,12 +11,13 @@ const tiers = [
 ];
 
 const BeforeAfter = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const clipRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number | null>(null);
 
   const updateSlider = useCallback((pos: number) => {
-    if (clipRef.current) clipRef.current.style.clipPath = `inset(0 ${100 - pos}% 0 0)`;
+    if (clipRef.current) clipRef.current.style.width = `${pos}%`;
     if (lineRef.current) lineRef.current.style.left = `${pos}%`;
   }, []);
 
@@ -30,6 +31,17 @@ const BeforeAfter = () => {
     },
     [updateSlider]
   );
+
+  useEffect(() => {
+    const syncWidth = () => {
+      if (containerRef.current) {
+        containerRef.current.style.setProperty("--container-w", `${containerRef.current.offsetWidth}px`);
+      }
+    };
+    syncWidth();
+    window.addEventListener("resize", syncWidth);
+    return () => window.removeEventListener("resize", syncWidth);
+  }, []);
 
   return (
     <section id="showcase" className="relative overflow-hidden py-24 md:py-36">
@@ -48,6 +60,7 @@ const BeforeAfter = () => {
         {/* Slider */}
         <div className="max-w-5xl mx-auto">
           <div
+            ref={containerRef}
             className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-border/50 cursor-col-resize select-none shadow-2xl"
             onMouseMove={handleMove}
             onTouchMove={handleMove}
@@ -55,13 +68,13 @@ const BeforeAfter = () => {
             {/* After (bottom layer) */}
             <img src={afterImg} alt="After redesign" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
 
-            {/* Before (clipped on top) */}
+            {/* Before (width-clipped overlay) */}
             <div
               ref={clipRef}
-              className="absolute inset-0 will-change-[clip-path]"
-              style={{ clipPath: "inset(0 50% 0 0)" }}
+              className="absolute top-0 left-0 h-full overflow-hidden will-change-[width]"
+              style={{ width: "50%" }}
             >
-              <img src={beforeImg} alt="Before redesign" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+              <img src={beforeImg} alt="Before redesign" className="absolute top-0 left-0 h-full object-cover" style={{ width: "var(--container-w)" }} loading="lazy" />
             </div>
 
             {/* Slider line */}
