@@ -1,4 +1,4 @@
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, XCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import GlowOrbs from "@/components/GlowOrbs";
 
@@ -22,6 +22,18 @@ const plans = [
       "Stock images included",
       "Unlimited revisions",
     ],
+    notIncluded: [
+      "Blog or portfolio section",
+      "Online booking integration",
+      "Google Analytics setup",
+      "Google Business Profile setup",
+      "AI-written page copy",
+      "E-commerce or online shop",
+      "Custom animations",
+      "Full SEO strategy document",
+      "Unlimited pages",
+    ],
+    closingLine: null,
   },
   {
     name: "Business",
@@ -42,6 +54,15 @@ const plans = [
       "AI-written page copy",
       "Unlimited revisions",
     ],
+    notIncluded: [
+      "E-commerce or online shop",
+      "Online menu system",
+      "Custom animations",
+      "Full SEO strategy document",
+      "Email capture and newsletter",
+      "Unlimited pages",
+    ],
+    closingLine: null,
   },
   {
     name: "Custom",
@@ -61,6 +82,8 @@ const plans = [
       "AI-written copy for all pages",
       "Unlimited revisions",
     ],
+    notIncluded: [],
+    closingLine: "The complete package — nothing held back.",
   },
 ];
 
@@ -92,11 +115,11 @@ const Pricing = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-5 md:gap-6 items-start">
+        <div className="grid md:grid-cols-3 gap-5 md:gap-6 items-stretch">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`group relative rounded-xl border transition-all duration-300 hover:shadow-[0_0_30px_hsl(270_45%_50%/0.08)] ${
+              className={`group relative rounded-xl border transition-all duration-300 hover:shadow-[0_0_30px_hsl(270_45%_50%/0.08)] flex flex-col ${
                 plan.featured
                   ? "bg-card border-primary/50 md:scale-105 shadow-[0_0_40px_hsl(270_45%_50%/0.12)]"
                   : "bg-card border-border hover:border-primary/30"
@@ -110,7 +133,7 @@ const Pricing = () => {
                 </div>
               )}
 
-              <div className="p-8 md:p-10">
+              <div className="p-8 md:p-10 flex flex-col flex-1">
                 <h3 className="font-display text-xl md:text-2xl font-bold mb-2">
                   {plan.name}
                 </h3>
@@ -136,32 +159,69 @@ const Pricing = () => {
                   </p>
                 )}
 
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 mb-6">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3 text-sm">
                       <Check
                         size={16}
-                        className="text-primary mt-0.5 shrink-0"
+                        className="text-green-500 mt-0.5 shrink-0"
                       />
                       <span className="text-muted-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                <a
-                  href="#contact"
-                  className={`group/btn w-full inline-flex items-center justify-center gap-2 rounded-lg font-semibold text-sm py-3.5 transition-all duration-300 ${
-                    plan.featured
-                      ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                      : "border border-border bg-secondary text-secondary-foreground hover:border-primary/30 hover:bg-secondary/80"
-                  }`}
-                >
-                  Get Started
-                  <ArrowRight
-                    size={16}
-                    className="group-hover/btn:translate-x-1 transition-transform"
-                  />
-                </a>
+                {/* Not Included Section */}
+                {plan.notIncluded.length > 0 && (
+                  <div className="mb-6">
+                    <div className="border-t border-border my-4" />
+                    <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-3" style={{ color: 'hsl(0 40% 55% / 0.7)' }}>
+                      Not Included
+                    </p>
+                    <ul className="space-y-2.5">
+                      {plan.notIncluded.map((item) => (
+                        <li key={item} className="flex items-start gap-3 text-[13px]">
+                          <XCircle
+                            size={16}
+                            className="mt-0.5 shrink-0"
+                            style={{ color: 'hsl(0 50% 50% / 0.6)' }}
+                          />
+                          <span className="text-muted-foreground/60">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Custom card closing line */}
+                {plan.closingLine && (
+                  <div className="mb-6">
+                    <div className="border-t border-border my-4" />
+                    <div className="flex items-center gap-2">
+                      <Check size={16} className="text-green-500 shrink-0" />
+                      <span className="text-green-500 text-sm font-semibold">
+                        {plan.closingLine}
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                <div className="mt-auto">
+                  <a
+                    href="#contact"
+                    className={`group/btn w-full inline-flex items-center justify-center gap-2 rounded-lg font-semibold text-sm py-3.5 transition-all duration-300 ${
+                      plan.featured
+                        ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                        : "border border-border bg-secondary text-secondary-foreground hover:border-primary/30 hover:bg-secondary/80"
+                    }`}
+                  >
+                    Get Started
+                    <ArrowRight
+                      size={16}
+                      className="group-hover/btn:translate-x-1 transition-transform"
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           ))}
