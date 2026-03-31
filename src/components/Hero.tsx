@@ -35,7 +35,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-up [animation-delay:600ms]">
           <a
             href="#showcase"
-            className="group btn-underglow inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-lg bg-gradient-metallic text-primary-foreground font-semibold text-base hover:opacity-90 transition-all glow"
+            className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-lg bg-gradient-metallic text-primary-foreground font-semibold text-base hover:opacity-90 transition-all glow"
           >
             See Before & After
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
