@@ -131,7 +131,7 @@ const StonePath = () => {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 z-0 pointer-events-none"
-      style={{ opacity: 0.7 }}
+      style={{ opacity: 0.9 }}
     />
   );
 };
