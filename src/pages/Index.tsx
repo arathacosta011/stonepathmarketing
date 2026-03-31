@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   // force rebuild 2026-03-31
+  return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <Hero />
