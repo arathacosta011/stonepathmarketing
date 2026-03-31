@@ -49,6 +49,7 @@ const BeforeAfter = () => {
         {/* Slider */}
         <div className="max-w-5xl mx-auto">
           <div
+            ref={containerRef}
             className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-border/50 cursor-col-resize select-none shadow-2xl"
             onMouseMove={handleMove}
             onTouchMove={handleMove}
@@ -56,13 +57,13 @@ const BeforeAfter = () => {
             {/* After (bottom layer) */}
             <img src={afterImg} alt="After redesign" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
 
-            {/* Before (width-clipped overlay — GPU-friendly) */}
+            {/* Before (width-clipped overlay) */}
             <div
               ref={clipRef}
-              className="absolute inset-0 overflow-hidden will-change-[width]"
+              className="absolute top-0 left-0 h-full overflow-hidden will-change-[width]"
               style={{ width: "50%" }}
             >
-              <img src={beforeImg} alt="Before redesign" className="absolute inset-0 w-[var(--full-w)] h-full object-cover" style={{ "--full-w": "100cqw" } as React.CSSProperties} loading="lazy" />
+              <img src={beforeImg} alt="Before redesign" className="absolute top-0 left-0 h-full object-cover" style={{ width: "var(--container-w)" }} loading="lazy" />
             </div>
 
             {/* Slider line */}
