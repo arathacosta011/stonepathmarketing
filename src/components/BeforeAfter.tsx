@@ -121,7 +121,7 @@ const BeforeAfter = () => {
             <div
               ref={lineRef}
               className="absolute top-0 bottom-0 w-0.5 bg-primary/80 z-10 -translate-x-1/2"
-              style={{ left: "50%", willChange: "left" }}
+              style={{ left: "50%" }}
             >
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary flex items-center justify-center shadow-lg glow">
                 <ArrowRight size={12} className="text-primary-foreground -rotate-180" />
