@@ -106,7 +106,7 @@ const StonePath = () => {
           0,
           Math.PI * 2
         );
-        ctx.fillStyle = `rgba(168, 130, 255, ${0.08 * stoneProgress})`;
+        ctx.fillStyle = `rgba(168, 130, 255, ${0.18 * stoneProgress})`;
         ctx.fill();
       });
 
