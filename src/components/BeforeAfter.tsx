@@ -32,6 +32,17 @@ const BeforeAfter = () => {
     [updateSlider]
   );
 
+  useEffect(() => {
+    const syncWidth = () => {
+      if (containerRef.current) {
+        containerRef.current.style.setProperty("--container-w", `${containerRef.current.offsetWidth}px`);
+      }
+    };
+    syncWidth();
+    window.addEventListener("resize", syncWidth);
+    return () => window.removeEventListener("resize", syncWidth);
+  }, []);
+
   return (
     <section id="showcase" className="relative overflow-hidden py-24 md:py-36">
       <GlowOrbs />
