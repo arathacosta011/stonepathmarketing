@@ -55,13 +55,13 @@ const BeforeAfter = () => {
             {/* After (bottom layer) */}
             <img src={afterImg} alt="After redesign" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
 
-            {/* Before (clipped on top) */}
+            {/* Before (width-clipped overlay — GPU-friendly) */}
             <div
               ref={clipRef}
-              className="absolute inset-0 will-change-[clip-path]"
-              style={{ clipPath: "inset(0 50% 0 0)" }}
+              className="absolute inset-0 overflow-hidden will-change-[width]"
+              style={{ width: "50%" }}
             >
-              <img src={beforeImg} alt="Before redesign" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+              <img src={beforeImg} alt="Before redesign" className="absolute inset-0 w-[var(--full-w)] h-full object-cover" style={{ "--full-w": "100cqw" } as React.CSSProperties} loading="lazy" />
             </div>
 
             {/* Slider line */}
