@@ -10,8 +10,9 @@ const points = [
 
 const WhyItMatters = () => {
   return (
-    <section className="py-24 md:py-32 bg-card/30">
-      <div className="container mx-auto px-6">
+    <section className="relative overflow-hidden py-24 md:py-32 bg-card/30">
+      <GlowOrbs />
+      <div className="relative z-[1] container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
             Why It{" "}

@@ -3,8 +3,9 @@ import GlowOrbs from "@/components/GlowOrbs";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border py-10 md:py-12">
-      <div className="container mx-auto px-6">
+    <footer className="relative overflow-hidden border-t border-border py-10 md:py-12">
+      <GlowOrbs variant="subtle" />
+      <div className="relative z-[1] container mx-auto px-6">
         <div className="flex flex-col items-center gap-6 text-center">
           <img src={logo} alt="Stonepath Marketing" className="h-10 w-auto invert" />
           <p className="text-muted-foreground text-sm max-w-md leading-relaxed">
