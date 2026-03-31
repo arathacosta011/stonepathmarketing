@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import stonePathBg from "@/assets/stone-path-hero.jpg";
-import GlowOrbs from "@/components/GlowOrbs";
+
 
 const Hero = () => {
   return (
