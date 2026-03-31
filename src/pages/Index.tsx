@@ -10,6 +10,7 @@ import Trust from "@/components/Trust";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Pricing from "@/components/Pricing";
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
       <WebDesign />
       <BeforeAfter />
       <Offers />
+      <Pricing />
       <Stats />
       <Trust />
       <FAQ />
