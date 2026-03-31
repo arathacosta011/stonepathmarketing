@@ -42,7 +42,7 @@ const Hero = () => {
           </a>
           <a
             href="#contact"
-            className="btn-underglow inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-border/60 text-foreground font-semibold text-base hover:bg-muted/50 hover:border-border transition-all backdrop-blur-sm"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-border/60 text-foreground font-semibold text-base hover:bg-muted/50 hover:border-border transition-all backdrop-blur-sm"
           >
             Book a Strategy Call
           </a>
