@@ -11,6 +11,7 @@ const tiers = [
 ];
 
 const BeforeAfter = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const clipRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number | null>(null);
