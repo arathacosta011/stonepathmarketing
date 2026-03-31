@@ -33,7 +33,7 @@ const Navbar = () => {
         </button>
       </div>
       {open && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border px-6 pb-6 pt-2 space-y-4">
+        <div className="md:hidden bg-background border-b border-border px-6 pb-6 pt-2 space-y-4">
           {links.map((l) => (
             <a key={l.label} href={l.href} onClick={() => setOpen(false)} className="block text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-1">
               {l.label}
