@@ -3,13 +3,13 @@ import { BrainCircuit, Sparkles, Target, Users } from "lucide-react";
 const reasons = [
   {
     icon: BrainCircuit,
-    title: "Strategy Before Spend",
-    desc: "We never launch an ad or build a page without a clear plan. Every dollar and every design decision ties back to your growth goals.",
+    title: "Strategy Before Design",
+    desc: "We never build a page without a clear plan. Every design decision ties back to your business goals and conversion strategy.",
   },
   {
     icon: Sparkles,
     title: "AI-Assisted, Human-Polished",
-    desc: "We use AI to move faster — not to cut corners. Every campaign and website gets hands-on refinement before it goes live.",
+    desc: "We use AI to move faster — not to cut corners. Every website gets hands-on refinement before it goes live.",
   },
   {
     icon: Target,
@@ -19,7 +19,7 @@ const reasons = [
   {
     icon: Users,
     title: "Lean Team, Sharp Execution",
-    desc: "No bloated agency overhead. You work directly with the people building your campaigns and websites.",
+    desc: "No bloated agency overhead. You work directly with the people designing and building your website.",
   },
 ];
 

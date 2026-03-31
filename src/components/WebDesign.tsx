@@ -1,38 +1,37 @@
-import { Monitor, Palette, Zap, ShieldCheck, ArrowRight } from "lucide-react";
+import { Megaphone, Target, BarChart3, TrendingUp, ArrowRight } from "lucide-react";
 
 const features = [
-  { icon: Monitor, title: "Custom-Built, Not Templated", desc: "Every page designed from scratch — tailored to your brand, your audience, and your goals." },
-  { icon: Palette, title: "Redesign & Refresh", desc: "Modernize your existing site with updated visuals, faster load times, and mobile-first responsiveness." },
-  { icon: Zap, title: "Speed That Converts", desc: "Our sites load under 2 seconds. Faster sites rank higher and keep visitors from bouncing." },
-  { icon: ShieldCheck, title: "Ongoing Support", desc: "From content updates to security patches, we keep your site current, secure, and performing." },
+  { icon: Megaphone, title: "Social Media Advertising", desc: "Full-service Meta and social ad campaigns — strategy, creative, targeting, optimization, and reporting." },
+  { icon: Target, title: "Precision Targeting", desc: "Laser-focused audience targeting using demographics, interests, lookalike audiences, and retargeting." },
+  { icon: BarChart3, title: "Performance Tracking", desc: "Detailed analytics and reporting so you always know exactly how your marketing spend is performing." },
+  { icon: TrendingUp, title: "Scaling & Growth", desc: "Once we find what works, we scale it. Proven frameworks to grow while maintaining strong ROI." },
 ];
 
 const WebDesign = () => {
   return (
-    <section id="results" className="py-24 md:py-32 bg-card/30">
+    <section id="marketing" className="py-24 md:py-32 bg-card/30">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
             <p className="text-primary text-sm font-semibold tracking-[0.3em] uppercase mb-4">
-              Web Design
+              Digital Marketing
             </p>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Premium Websites{" "}
-              <span className="text-gradient">Built to Convert</span>
+              Strategic Campaigns{" "}
+              <span className="text-gradient">That Drive Results</span>
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg mb-4 leading-relaxed">
-              The goal is not just a pretty website. We build premium, fast, conversion-focused sites that turn attention into booked calls and qualified leads.
+              A great website deserves great traffic. We plan, launch, and optimize digital marketing campaigns with clear strategy and a relentless focus on lead quality and cost efficiency.
             </p>
             <p className="text-muted-foreground text-base sm:text-lg mb-8 leading-relaxed">
-              We use AI to move faster — not to look generic. Every site gets{" "}
-              <strong className="text-foreground">hands-on design, strategic copy, and performance optimization</strong>{" "}
-              so it actually works for your business.
+              From{" "}
+              <strong className="text-foreground">Meta ads to full-funnel strategies</strong>, we bring the right audience to the websites we build — so every click counts.
             </p>
             <a
               href="#contact"
               className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-lg bg-gradient-metallic text-primary-foreground font-semibold text-base hover:opacity-90 transition-all glow"
             >
-              Get a Free Quote
+              Get a Free Consultation
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

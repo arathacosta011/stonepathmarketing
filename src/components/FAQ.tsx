@@ -8,11 +8,11 @@ import {
 const faqs = [
   {
     q: "What kinds of businesses do you work with?",
-    a: "We work with e-commerce brands, local service businesses, real estate professionals, health and wellness companies, and any business that sells online or needs more leads. If you have a product or service worth promoting, we can help.",
+    a: "We work with e-commerce brands, local service businesses, real estate professionals, salons, restaurants, health and wellness companies, and any business that needs a professional online presence. If you have a product or service worth promoting, we can help.",
   },
   {
-    q: "Do you only run Meta ads?",
-    a: "Meta (Facebook and Instagram) advertising is our core specialty — it is where we deliver the strongest results. We also build high-converting websites and landing pages that work hand-in-hand with your ad campaigns to maximize conversions.",
+    q: "Do you only build websites?",
+    a: "Web design is our primary service, but we also run strategic digital marketing campaigns — including Meta (Facebook and Instagram) advertising — to drive traffic to the sites we build. We offer complete website + marketing packages.",
   },
   {
     q: "Are the websites fully AI-generated?",
