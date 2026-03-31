@@ -6,10 +6,9 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const links = [
-    { label: "Web Design", href: "#services" },
-    { label: "Marketing", href: "#marketing" },
+    { label: "Before & After", href: "#showcase" },
+    { label: "Services", href: "#services" },
     { label: "Pricing", href: "#pricing" },
-    { label: "Process", href: "#about" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -26,7 +25,7 @@ const Navbar = () => {
             </a>
           ))}
           <a href="#contact" className="px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity">
-            Start Your Project
+            Book a Call
           </a>
         </div>
         <button className="md:hidden text-foreground p-1" onClick={() => setOpen(!open)} aria-label="Menu">
@@ -41,7 +40,7 @@ const Navbar = () => {
             </a>
           ))}
           <a href="#contact" onClick={() => setOpen(false)} className="inline-block px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold mt-2">
-            Start Your Project
+            Book a Call
           </a>
         </div>
       )}

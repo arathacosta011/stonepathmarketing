@@ -6,14 +6,13 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center gap-6 text-center">
           <img src={logo} alt="Stonepath Marketing" className="h-10 w-auto invert" />
-          <p className="text-muted-foreground text-sm max-w-lg leading-relaxed">
-            Premium web design and strategic digital marketing built to help businesses grow with more clarity, polish, and performance.
+          <p className="text-muted-foreground text-sm max-w-md leading-relaxed">
+            We turn weak websites into growth assets. Retouch, redesign, or full rebuild — built to convert.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
-            <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Web Design</a>
-            <a href="#marketing" className="text-muted-foreground hover:text-primary transition-colors">Marketing</a>
+            <a href="#showcase" className="text-muted-foreground hover:text-primary transition-colors">Before & After</a>
+            <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Services</a>
             <a href="#pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</a>
-            <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">Process</a>
             <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
           </div>
           <p className="text-muted-foreground text-xs">
