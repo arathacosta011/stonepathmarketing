@@ -42,9 +42,9 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden py-24 md:py-32">
+    <section id="contact" className="relative overflow-hidden py-20 md:py-32">
       <GlowOrbs />
-      <div className="relative z-[1] container mx-auto px-6">
+      <div className="relative z-[1] container mx-auto px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-5">
             Let's Talk About{" "}

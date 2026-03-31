@@ -97,9 +97,9 @@ const carePlanFeatures = [
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="relative overflow-hidden py-24 md:py-32">
+    <section id="pricing" className="relative overflow-hidden py-20 md:py-32">
       <GlowOrbs />
-      <div className="relative z-[1] container mx-auto px-6">
+      <div className="relative z-[1] container mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
           <p className="text-primary text-sm font-semibold tracking-[0.3em] uppercase mb-4">
@@ -115,7 +115,7 @@ const Pricing = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-5 md:gap-6 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 items-stretch">
           {plans.map((plan) => (
             <div
               key={plan.name}
