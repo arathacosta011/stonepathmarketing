@@ -3,7 +3,7 @@ import GlowOrbs from "@/components/GlowOrbs";
 
 const Footer = () => {
   return (
-    <footer className="relative overflow-hidden border-t border-border py-10 md:py-12">
+    <footer className="relative overflow-hidden py-10 md:py-12">
       <GlowOrbs variant="subtle" />
       <div className="relative z-[1] container mx-auto px-6">
         <div className="flex flex-col items-center gap-6 text-center">

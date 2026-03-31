@@ -10,7 +10,7 @@ const points = [
 
 const WhyItMatters = () => {
   return (
-    <section className="relative overflow-hidden py-24 md:py-32 bg-card/30">
+    <section className="relative overflow-hidden py-24 md:py-32">
       <GlowOrbs />
       <div className="relative z-[1] container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
