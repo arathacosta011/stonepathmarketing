@@ -1,4 +1,5 @@
 import logo from "@/assets/logo.png";
+import GlowOrbs from "@/components/GlowOrbs";
 
 const Footer = () => {
   return (
