@@ -88,7 +88,7 @@ const plans = [
 ];
 
 const carePlanFeatures = [
-  "Up to 2 hours of changes per month — text edits, new items, image swaps, logo updates",
+  "Unlimited changes — text edits, new items, image swaps, logo updates",
   "Plugin and software updates",
   "Monthly backup",
   "Uptime monitoring",
