@@ -1,4 +1,4 @@
-import { useRef, useCallback, useEffect, useState } from "react";
+import { useRef, useCallback, useEffect } from "react";
 import GlowOrbs from "@/components/GlowOrbs";
 import { ArrowRight } from "lucide-react";
 import beforeImg from "@/assets/before-website.jpg";
@@ -12,48 +12,66 @@ const tiers = [
 
 const BeforeAfter = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [dragging, setDragging] = useState(false);
-  const posRef = useRef(50);
   const lineRef = useRef<HTMLDivElement>(null);
   const beforeRef = useRef<HTMLDivElement>(null);
+  const draggingRef = useRef(false);
+  const widthRef = useRef(0);
+  const leftRef = useRef(0);
 
-  const applyPos = useCallback((pct: number) => {
-    posRef.current = pct;
+  const applyPos = useCallback((clientX: number) => {
+    const pct = Math.max(2, Math.min(98, ((clientX - leftRef.current) / widthRef.current) * 100));
     if (beforeRef.current) {
       beforeRef.current.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
     }
     if (lineRef.current) {
-      lineRef.current.style.transform = `translate3d(-50%, 0, 0) translateX(${pct}cqi)`;
+      lineRef.current.style.left = `${pct}%`;
     }
   }, []);
 
-  const getPos = useCallback((clientX: number) => {
+  const syncRect = useCallback(() => {
     const rect = containerRef.current?.getBoundingClientRect();
-    if (!rect) return 50;
-    return Math.max(2, Math.min(98, ((clientX - rect.left) / rect.width) * 100));
+    if (rect) {
+      widthRef.current = rect.width;
+      leftRef.current = rect.left;
+    }
   }, []);
 
-  // Pointer events (works for both mouse and touch)
-  const onPointerDown = useCallback((e: React.PointerEvent) => {
-    e.preventDefault();
-    (e.target as HTMLElement).setPointerCapture(e.pointerId);
-    setDragging(true);
-    applyPos(getPos(e.clientX));
-  }, [applyPos, getPos]);
-
-  const onPointerMove = useCallback((e: React.PointerEvent) => {
-    if (!dragging) return;
-    applyPos(getPos(e.clientX));
-  }, [dragging, applyPos, getPos]);
-
-  const onPointerUp = useCallback(() => {
-    setDragging(false);
-  }, []);
-
-  // Set initial position via inline style and container query unit fallback
   useEffect(() => {
-    applyPos(50);
-  }, [applyPos]);
+    const el = containerRef.current;
+    if (!el) return;
+
+    const onDown = (e: PointerEvent) => {
+      e.preventDefault();
+      el.setPointerCapture(e.pointerId);
+      draggingRef.current = true;
+      syncRect();
+      applyPos(e.clientX);
+    };
+
+    const onMove = (e: PointerEvent) => {
+      if (!draggingRef.current) return;
+      applyPos(e.clientX);
+    };
+
+    const onUp = () => {
+      draggingRef.current = false;
+    };
+
+    el.addEventListener("pointerdown", onDown, { passive: false });
+    el.addEventListener("pointermove", onMove, { passive: true });
+    el.addEventListener("pointerup", onUp);
+    el.addEventListener("pointercancel", onUp);
+    window.addEventListener("resize", syncRect);
+    syncRect();
+
+    return () => {
+      el.removeEventListener("pointerdown", onDown);
+      el.removeEventListener("pointermove", onMove);
+      el.removeEventListener("pointerup", onUp);
+      el.removeEventListener("pointercancel", onUp);
+      window.removeEventListener("resize", syncRect);
+    };
+  }, [applyPos, syncRect]);
 
   return (
     <section id="showcase" className="relative overflow-hidden py-20 md:py-36">
@@ -74,11 +92,6 @@ const BeforeAfter = () => {
           <div
             ref={containerRef}
             className="relative w-full aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden border border-border/50 select-none shadow-2xl touch-none"
-            style={{ containerType: "inline-size" }}
-            onPointerDown={onPointerDown}
-            onPointerMove={onPointerMove}
-            onPointerUp={onPointerUp}
-            onPointerCancel={onPointerUp}
           >
             {/* After (bottom layer) */}
             <img
@@ -89,11 +102,11 @@ const BeforeAfter = () => {
               draggable={false}
             />
 
-            {/* Before (clip-path overlay — GPU composited) */}
+            {/* Before (clip-path overlay) */}
             <div
               ref={beforeRef}
-              className="absolute inset-0 will-change-[clip-path]"
-              style={{ clipPath: "inset(0 50% 0 0)" }}
+              className="absolute inset-0"
+              style={{ clipPath: "inset(0 50% 0 0)", willChange: "clip-path" }}
             >
               <img
                 src={beforeImg}
@@ -104,15 +117,15 @@ const BeforeAfter = () => {
               />
             </div>
 
-            {/* Slider line — GPU composited via translate3d */}
+            {/* Slider line */}
             <div
               ref={lineRef}
-              className="absolute top-0 bottom-0 left-0 w-0.5 bg-primary/80 z-10 will-change-transform"
-              style={{ transform: "translate3d(-50%, 0, 0) translateX(50cqi)" }}
+              className="absolute top-0 bottom-0 w-0.5 bg-primary/80 z-10 -translate-x-1/2"
+              style={{ left: "50%", willChange: "left" }}
             >
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary flex items-center justify-center shadow-lg glow">
-                <ArrowRight size={12} className="text-primary-foreground -rotate-180 sm:w-3.5 sm:h-3.5" />
-                <ArrowRight size={12} className="text-primary-foreground sm:w-3.5 sm:h-3.5" />
+                <ArrowRight size={12} className="text-primary-foreground -rotate-180" />
+                <ArrowRight size={12} className="text-primary-foreground" />
               </div>
             </div>
 
