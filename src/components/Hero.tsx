@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import stonePathBg from "@/assets/stone-path-hero.jpg";
+import GlowOrbs from "@/components/GlowOrbs";
 
 const Hero = () => {
   return (
@@ -17,6 +18,7 @@ const Hero = () => {
       {/* Subtle dark overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
       <div className="absolute inset-0 bg-background/20" />
+      <GlowOrbs variant="hero" />
 
       <div className="relative z-10 container mx-auto px-6 text-center max-w-4xl py-20">
         <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] mb-8 opacity-0 animate-fade-up [animation-delay:200ms] drop-shadow-lg">

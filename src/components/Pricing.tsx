@@ -1,5 +1,6 @@
 import { Check, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import GlowOrbs from "@/components/GlowOrbs";
 
 const plans = [
   {
@@ -73,8 +74,9 @@ const carePlanFeatures = [
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="py-24 md:py-32">
-      <div className="container mx-auto px-6">
+    <section id="pricing" className="relative overflow-hidden py-24 md:py-32">
+      <GlowOrbs />
+      <div className="relative z-[1] container mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
           <p className="text-primary text-sm font-semibold tracking-[0.3em] uppercase mb-4">

@@ -23,7 +23,7 @@ const Offers = () => {
   return (
     <section id="services" className="relative overflow-hidden py-24 md:py-32">
       <GlowOrbs />
-      <div className="container mx-auto px-6">
+      <div className="relative z-[1] container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-5">
             What We Actually{" "}
