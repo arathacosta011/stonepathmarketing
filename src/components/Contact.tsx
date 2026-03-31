@@ -48,11 +48,11 @@ const Contact = () => {
             Get In Touch
           </p>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            Ready to Build Your Next{" "}
-            <span className="text-gradient">Growth System?</span>
+            Ready to Build Your{" "}
+            <span className="text-gradient">Dream Website?</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-            Tell us what you are selling, where you are stuck, and what growth looks like for your business. We will map out the smartest next step.
+            Tell us about your business, what you need, and where you want to go. We will map out the smartest next step.
           </p>
         </div>
 
@@ -102,13 +102,13 @@ const Contact = () => {
               <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Email *" required className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm" />
             </div>
             <input type="text" name="company" value={form.company} onChange={handleChange} placeholder="Company (optional)" className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all text-sm" />
-            <textarea rows={4} name="message" value={form.message} onChange={handleChange} placeholder="Tell us what you are selling, where you are stuck, and what growth looks like... *" required className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all resize-none text-sm" />
+            <textarea rows={4} name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your business and what kind of website you need... *" required className="w-full px-4 py-3.5 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all resize-none text-sm" />
             <button type="submit" disabled={loading} className="group w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-lg bg-gradient-metallic text-primary-foreground font-semibold text-base hover:opacity-90 transition-all glow disabled:opacity-50">
-              {loading ? "Sending..." : "Request Your Growth Plan"}
+              {loading ? "Sending..." : "Start Your Project"}
               {!loading && <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />}
             </button>
             <p className="text-muted-foreground text-xs text-center leading-relaxed pt-1">
-              No pressure. Just a clear look at what is working, what is not, and what we would do next.
+              No pressure. Just a clear look at what you need and how we can help.
             </p>
           </form>
         </div>

@@ -1,20 +1,20 @@
-import { Megaphone, Globe, Layers, ArrowRight } from "lucide-react";
+import { Globe, Megaphone, Layers, ArrowRight } from "lucide-react";
 
 const offers = [
   {
-    icon: Megaphone,
-    title: "Meta Ads Management",
-    desc: "Full-service campaign management — strategy, creative direction, targeting, optimization, and reporting. We handle everything so your ads actually produce leads.",
+    icon: Globe,
+    title: "Website Design & Development",
+    desc: "Custom-built, high-speed websites designed to convert visitors into customers. Not templates — real, tailored builds that represent your brand.",
   },
   {
-    icon: Globe,
-    title: "Landing Pages & Websites",
-    desc: "Custom-built, high-speed websites and landing pages designed to convert visitors into customers. Not templates — real, tailored builds.",
+    icon: Megaphone,
+    title: "Digital Marketing & Ads",
+    desc: "Strategic social media advertising and digital campaigns that bring the right traffic to your website and turn clicks into leads.",
   },
   {
     icon: Layers,
     title: "Growth Systems",
-    desc: "End-to-end growth infrastructure combining ads, landing pages, and conversion tracking into a single system that scales with your business.",
+    desc: "End-to-end growth infrastructure combining your website, ads, and conversion tracking into a single system that scales with your business.",
   },
 ];
 
@@ -50,7 +50,7 @@ const Offers = () => {
             href="#contact"
             className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-lg bg-gradient-metallic text-primary-foreground font-semibold text-base hover:opacity-90 transition-all glow"
           >
-            Request a Growth Plan
+            Start Your Project
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
         </div>

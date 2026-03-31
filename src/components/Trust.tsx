@@ -14,13 +14,13 @@ const Trust = () => {
           </h2>
           <div className="space-y-6 text-muted-foreground text-base sm:text-lg leading-relaxed text-left max-w-2xl mx-auto">
             <p>
-              Stonepath Marketing is not for everyone. We work with businesses that are ready to invest in stronger systems, better presentation, and cleaner execution — not quick fixes or vanity metrics.
+              Stonepath Marketing is not for everyone. We work with businesses that are ready to invest in a premium online presence — not quick fixes or cookie-cutter templates.
             </p>
             <p>
-              If you are looking for someone to run a few boosted posts and call it a day, we are not the right fit. But if you want a team that treats your growth like a system — from the first ad impression to the final conversion — that is exactly what we do.
+              If you need a basic site thrown together in a weekend, we are not the right fit. But if you want a website that looks exceptional, loads fast, and actually converts visitors into customers — that is exactly what we do.
             </p>
             <p>
-              We combine strategic Meta advertising with premium, conversion-focused websites to create a growth engine that compounds over time. No fluff. No filler. Just results you can measure.
+              We combine strategic web design with digital marketing to create a growth engine that compounds over time. No fluff. No filler. Just results you can measure.
             </p>
           </div>
           <div className="mt-10">

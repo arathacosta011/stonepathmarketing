@@ -5,12 +5,12 @@ import WhyStonepath from "@/components/WhyStonepath";
 import WebDesign from "@/components/WebDesign";
 import BeforeAfter from "@/components/BeforeAfter";
 import Offers from "@/components/Offers";
+import Pricing from "@/components/Pricing";
 import Stats from "@/components/Stats";
 import Trust from "@/components/Trust";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import Pricing from "@/components/Pricing";
 
 const Index = () => {
   return (
@@ -19,8 +19,8 @@ const Index = () => {
       <Hero />
       <Services />
       <WhyStonepath />
-      <WebDesign />
       <BeforeAfter />
+      <WebDesign />
       <Offers />
       <Pricing />
       <Stats />
