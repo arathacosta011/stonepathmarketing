@@ -84,6 +84,30 @@
 
   .glow {
     box-shadow: var(--shadow-glow);
+    position: relative;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .glow::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 10%;
+    width: 80%;
+    height: 14px;
+    border-radius: 50%;
+    background: hsl(270 45% 50% / 0);
+    filter: blur(8px);
+    transition: background 0.3s ease;
+    pointer-events: none;
+  }
+
+  .glow:hover {
+    box-shadow: 0 8px 30px hsl(270 45% 50% / 0.35), 0 2px 12px hsl(270 45% 50% / 0.2);
+  }
+
+  .glow:hover::after {
+    background: hsl(270 45% 50% / 0.5);
   }
 
   .bg-gradient-metallic {
