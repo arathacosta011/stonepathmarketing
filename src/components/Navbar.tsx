@@ -13,7 +13,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 sm:bg-background/80 sm:backdrop-blur-xl border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-16 px-6">
         <a href="#" className="flex items-center">
           <img src={logo} alt="Stonepath Marketing" className="h-10 sm:h-12 w-auto invert" />
