@@ -180,9 +180,6 @@ const Pricing = () => {
                 </li>
               ))}
             </ul>
-            <p className="text-muted-foreground/60 text-xs">
-              Extra work beyond 2 hours billed at $60/hr, always quoted first.
-            </p>
           </div>
         </div>
       </div>
