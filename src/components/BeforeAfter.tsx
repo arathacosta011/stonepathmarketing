@@ -16,7 +16,7 @@ const BeforeAfter = () => {
   const rafRef = useRef<number | null>(null);
 
   const updateSlider = useCallback((pos: number) => {
-    if (clipRef.current) clipRef.current.style.clipPath = `inset(0 ${100 - pos}% 0 0)`;
+    if (clipRef.current) clipRef.current.style.width = `${pos}%`;
     if (lineRef.current) lineRef.current.style.left = `${pos}%`;
   }, []);
 
