@@ -5,7 +5,7 @@ const FinalCTA = () => {
   return (
     <section className="relative overflow-hidden py-24 md:py-32">
       <GlowOrbs />
-      <div className="container mx-auto px-6">
+      <div className="relative z-[1] container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
             If your website doesn't match the level you want to grow to,{" "}
