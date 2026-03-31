@@ -114,7 +114,7 @@ const Contact = () => {
       </div>
 
       {showSuccess && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/90 p-4">
           <div className="relative bg-card border border-border rounded-2xl p-8 md:p-10 max-w-md w-full text-center shadow-2xl animate-in fade-in zoom-in-95 duration-300">
             <button onClick={() => setShowSuccess(false)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors">
               <X size={20} />

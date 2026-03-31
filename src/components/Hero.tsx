@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import stonePathBg from "@/assets/stone-path-hero.jpg";
+import stonePathBg from "@/assets/stone-path-hero.webp";
 
 
 const Hero = () => {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -13,7 +13,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 sm:bg-background/80 sm:backdrop-blur-xl border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-16 px-6">
         <a href="#" className="flex items-center">
           <img src={logo} alt="Stonepath Marketing" className="h-10 sm:h-12 w-auto invert" />
@@ -33,7 +33,7 @@ const Navbar = () => {
         </button>
       </div>
       {open && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border px-6 pb-6 pt-2 space-y-4">
+        <div className="md:hidden bg-background border-b border-border px-6 pb-6 pt-2 space-y-4">
           {links.map((l) => (
             <a key={l.label} href={l.href} onClick={() => setOpen(false)} className="block text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-1">
               {l.label}

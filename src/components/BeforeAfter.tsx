@@ -1,8 +1,8 @@
 import { useRef, useCallback, useEffect } from "react";
 import GlowOrbs from "@/components/GlowOrbs";
 import { ArrowRight } from "lucide-react";
-import beforeImg from "@/assets/before-website.jpg";
-import afterImg from "@/assets/after-website.jpg";
+import beforeImg from "@/assets/before-website.webp";
+import afterImg from "@/assets/after-website.webp";
 
 const tiers = [
   { label: "Retouch", desc: "Clean up what you have" },
@@ -106,7 +106,7 @@ const BeforeAfter = () => {
             <div
               ref={beforeRef}
               className="absolute inset-0"
-              style={{ clipPath: "inset(0 50% 0 0)", willChange: "clip-path" }}
+              style={{ clipPath: "inset(0 50% 0 0)" }}
             >
               <img
                 src={beforeImg}
@@ -121,7 +121,7 @@ const BeforeAfter = () => {
             <div
               ref={lineRef}
               className="absolute top-0 bottom-0 w-0.5 bg-primary/80 z-10 -translate-x-1/2"
-              style={{ left: "50%", willChange: "left" }}
+              style={{ left: "50%" }}
             >
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary flex items-center justify-center shadow-lg glow">
                 <ArrowRight size={12} className="text-primary-foreground -rotate-180" />
