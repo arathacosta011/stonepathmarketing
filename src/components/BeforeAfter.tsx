@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useCallback } from "react";
 import GlowOrbs from "@/components/GlowOrbs";
 import { ArrowRight } from "lucide-react";
 import beforeImg from "@/assets/before-website.jpg";
@@ -11,17 +11,25 @@ const tiers = [
 ];
 
 const BeforeAfter = () => {
-  const [sliderPos, setSliderPos] = useState(50);
+  const clipRef = useRef<HTMLDivElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number | null>(null);
 
-  const handleSlider = (
-    e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>,
-    container: HTMLDivElement
-  ) => {
-    const rect = container.getBoundingClientRect();
-    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
-    const pos = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
-    setSliderPos(pos);
-  };
+  const updateSlider = useCallback((pos: number) => {
+    if (clipRef.current) clipRef.current.style.clipPath = `inset(0 ${100 - pos}% 0 0)`;
+    if (lineRef.current) lineRef.current.style.left = `${pos}%`;
+  }, []);
+
+  const handleMove = useCallback(
+    (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
+      const pos = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(() => updateSlider(pos));
+    },
+    [updateSlider]
+  );
 
   return (
     <section id="showcase" className="relative overflow-hidden py-24 md:py-36">
@@ -41,23 +49,26 @@ const BeforeAfter = () => {
         <div className="max-w-5xl mx-auto">
           <div
             className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-border/50 cursor-col-resize select-none shadow-2xl"
-            onMouseMove={(e) => handleSlider(e, e.currentTarget)}
-            onTouchMove={(e) => handleSlider(e, e.currentTarget)}
+            onMouseMove={handleMove}
+            onTouchMove={handleMove}
           >
-            <img src={afterImg} alt="After redesign" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 overflow-hidden" style={{ width: `${sliderPos}%` }}>
-              <img
-                src={beforeImg}
-                alt="Before redesign"
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{ width: `${100 / (sliderPos / 100)}%`, maxWidth: "none" }}
-              />
+            {/* After (bottom layer) */}
+            <img src={afterImg} alt="After redesign" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+
+            {/* Before (clipped on top) */}
+            <div
+              ref={clipRef}
+              className="absolute inset-0 will-change-[clip-path]"
+              style={{ clipPath: "inset(0 50% 0 0)" }}
+            >
+              <img src={beforeImg} alt="Before redesign" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
             </div>
 
             {/* Slider line */}
             <div
-              className="absolute top-0 bottom-0 w-0.5 bg-primary/80 z-10"
-              style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }}
+              ref={lineRef}
+              className="absolute top-0 bottom-0 w-0.5 bg-primary/80 z-10 will-change-[left]"
+              style={{ left: "50%", transform: "translateX(-50%)" }}
             >
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg glow">
                 <ArrowRight size={14} className="text-primary-foreground -rotate-180" />
