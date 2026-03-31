@@ -1,5 +1,6 @@
 import { Check, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import GlowOrbs from "@/components/GlowOrbs";
 
 const plans = [
   {
