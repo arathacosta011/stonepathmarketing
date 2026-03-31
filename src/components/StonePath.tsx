@@ -32,12 +32,12 @@ const StonePath = () => {
 
     // Stone path segments — organic curves from bottom-center upward
     const paths = [
-      { startX: 0.5, startY: 1.1, endX: 0.48, endY: 0.3, cp1x: 0.52, cp1y: 0.85, cp2x: 0.44, cp2y: 0.55, width: 2.5, opacity: 0.15 },
-      { startX: 0.5, startY: 1.1, endX: 0.55, endY: 0.2, cp1x: 0.47, cp1y: 0.8, cp2x: 0.58, cp2y: 0.5, width: 1.5, opacity: 0.08 },
-      { startX: 0.5, startY: 1.1, endX: 0.42, endY: 0.15, cp1x: 0.53, cp1y: 0.9, cp2x: 0.38, cp2y: 0.45, width: 1, opacity: 0.06 },
+      { startX: 0.5, startY: 1.1, endX: 0.48, endY: 0.3, cp1x: 0.52, cp1y: 0.85, cp2x: 0.44, cp2y: 0.55, width: 3, opacity: 0.3 },
+      { startX: 0.5, startY: 1.1, endX: 0.55, endY: 0.2, cp1x: 0.47, cp1y: 0.8, cp2x: 0.58, cp2y: 0.5, width: 2, opacity: 0.18 },
+      { startX: 0.5, startY: 1.1, endX: 0.42, endY: 0.15, cp1x: 0.53, cp1y: 0.9, cp2x: 0.38, cp2y: 0.45, width: 1.5, opacity: 0.12 },
       // Branching paths
-      { startX: 0.48, startY: 0.6, endX: 0.3, endY: 0.25, cp1x: 0.42, cp1y: 0.5, cp2x: 0.33, cp2y: 0.35, width: 1, opacity: 0.05 },
-      { startX: 0.52, startY: 0.65, endX: 0.72, endY: 0.3, cp1x: 0.58, cp1y: 0.55, cp2x: 0.68, cp2y: 0.4, width: 1, opacity: 0.05 },
+      { startX: 0.48, startY: 0.6, endX: 0.3, endY: 0.25, cp1x: 0.42, cp1y: 0.5, cp2x: 0.33, cp2y: 0.35, width: 1.5, opacity: 0.1 },
+      { startX: 0.52, startY: 0.65, endX: 0.72, endY: 0.3, cp1x: 0.58, cp1y: 0.55, cp2x: 0.68, cp2y: 0.4, width: 1.5, opacity: 0.1 },
     ];
 
     // Small stone dots along the main path
@@ -106,7 +106,7 @@ const StonePath = () => {
           0,
           Math.PI * 2
         );
-        ctx.fillStyle = `rgba(168, 130, 255, ${0.08 * stoneProgress})`;
+        ctx.fillStyle = `rgba(168, 130, 255, ${0.18 * stoneProgress})`;
         ctx.fill();
       });
 
@@ -131,7 +131,7 @@ const StonePath = () => {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 z-0 pointer-events-none"
-      style={{ opacity: 0.7 }}
+      style={{ opacity: 0.9 }}
     />
   );
 };
