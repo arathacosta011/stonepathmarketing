@@ -28,7 +28,7 @@ const Hero = () => {
           <span className="text-gradient">look ready to scale.</span>
         </h1>
 
-        <p className="text-sm sm:text-lg text-white/85 max-w-xl mx-auto mb-8 sm:mb-12 opacity-0 animate-fade-up [animation-delay:400ms] leading-relaxed [text-shadow:0_1px_10px_rgba(0,0,0,0.6)] px-2">
+        <p className="text-base sm:text-xl text-white max-w-xl mx-auto mb-8 sm:mb-12 opacity-0 animate-fade-up [animation-delay:400ms] leading-relaxed [text-shadow:0_2px_16px_rgba(0,0,0,0.7),0_1px_4px_rgba(0,0,0,0.5)] px-2 font-medium">
           Retouch your current site or rebuild from the ground up — either way, we turn weak first impressions into clean, conversion-ready experiences.
         </p>
 
