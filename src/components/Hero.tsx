@@ -23,7 +23,7 @@ const Hero = () => {
       />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center max-w-4xl py-16 sm:py-20">
-        <h1 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] mb-6 sm:mb-8 opacity-0 animate-fade-up [animation-delay:200ms] text-white [text-shadow:0_2px_20px_rgba(0,0,0,0.7),0_1px_4px_rgba(0,0,0,0.5)]">
+        <h1 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] mb-6 sm:mb-8 opacity-0 animate-fade-up [animation-delay:200ms] text-foreground drop-shadow-lg">
           Websites built to make your business{" "}
           <span className="text-gradient">look ready to scale.</span>
         </h1>
