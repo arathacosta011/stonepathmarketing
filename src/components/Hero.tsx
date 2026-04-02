@@ -15,11 +15,11 @@ const Hero = () => {
         fetchPriority="high"
       />
 
-      {/* Bright light on the path */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+      {/* Darkened overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
       <div
         className="pointer-events-none absolute top-[20%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full"
-        style={{ background: "radial-gradient(circle, hsl(40 60% 95% / 0.35) 0%, hsl(40 40% 80% / 0.15) 40%, transparent 70%)", filter: "blur(30px)" }}
+        style={{ background: "radial-gradient(circle, hsl(40 60% 95% / 0.25) 0%, hsl(40 40% 80% / 0.1) 40%, transparent 70%)", filter: "blur(30px)" }}
       />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center max-w-4xl py-16 sm:py-20">
