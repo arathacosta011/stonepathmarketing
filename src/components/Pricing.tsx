@@ -37,7 +37,7 @@ const plans = [
   },
   {
     name: "Business",
-    price: "$1,000",
+    price: "$1,100",
     subtitle: "+ $100/month care plan",
     badge: "Most Popular",
     featured: true,
