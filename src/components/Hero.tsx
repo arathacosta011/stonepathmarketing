@@ -15,20 +15,20 @@ const Hero = () => {
         fetchPriority="high"
       />
 
-      {/* Bright light on the path */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+      {/* Darkened overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
       <div
         className="pointer-events-none absolute top-[20%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full"
-        style={{ background: "radial-gradient(circle, hsl(40 60% 95% / 0.35) 0%, hsl(40 40% 80% / 0.15) 40%, transparent 70%)", filter: "blur(30px)" }}
+        style={{ background: "radial-gradient(circle, hsl(40 60% 95% / 0.25) 0%, hsl(40 40% 80% / 0.1) 40%, transparent 70%)", filter: "blur(30px)" }}
       />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center max-w-4xl py-16 sm:py-20">
-        <h1 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] mb-6 sm:mb-8 opacity-0 animate-fade-up [animation-delay:200ms] drop-shadow-lg">
+        <h1 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] mb-6 sm:mb-8 opacity-0 animate-fade-up [animation-delay:200ms] text-white [text-shadow:0_2px_20px_rgba(0,0,0,0.7),0_1px_4px_rgba(0,0,0,0.5)]">
           Websites built to make your business{" "}
           <span className="text-gradient">look ready to scale.</span>
         </h1>
 
-        <p className="text-sm sm:text-lg text-muted-foreground max-w-xl mx-auto mb-8 sm:mb-12 opacity-0 animate-fade-up [animation-delay:400ms] leading-relaxed drop-shadow-md px-2">
+        <p className="text-sm sm:text-lg text-white/85 max-w-xl mx-auto mb-8 sm:mb-12 opacity-0 animate-fade-up [animation-delay:400ms] leading-relaxed [text-shadow:0_1px_10px_rgba(0,0,0,0.6)] px-2">
           Retouch your current site or rebuild from the ground up — either way, we turn weak first impressions into clean, conversion-ready experiences.
         </p>
 
